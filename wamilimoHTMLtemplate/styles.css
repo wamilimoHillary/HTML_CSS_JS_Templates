@@ -1,0 +1,212 @@
+/* General Styles */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+button{
+    width: fit-content;
+    background-color:red;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 4px 20px;    
+}
+
+/* Header */
+header {
+    background-color: #355f69; 
+    color: white; 
+    padding: 1rem; 
+    display: flex; /* Flexbox layout */
+    height: fit-content; 
+    position: relative; 
+    box-shadow: 5px 5px 2px 1px red ;
+}
+
+/* Logo Styles */
+.logo {
+    margin-left: 1rem; 
+}
+
+.logo img {
+    width: 100px; /* Fixed width for logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Menu Toggle Button Styles */
+.menu-toggle {
+    display: none; /* Initially hidden */
+    font-size: 50px;
+    background: none; /* Transparent background */
+    border: none; /* No border */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor */
+    position: absolute; /* Absolute positioning */
+    top: 1rem; /* Distance from top */
+    right: 2rem; /* Distance from right */
+}
+
+/* Navigation Styles */
+nav {
+    display: flex; /* Flexbox layout for navigation links */
+    gap: 5rem; /* Spacing between links */
+    padding: 10px; 
+    position: absolute; 
+    top: 1rem;
+    right: 0; 
+    box-shadow: 5px 5px 2px 1px red ;
+}
+
+nav a {
+    color: white; 
+    text-decoration: none; /* Remove underline */
+    font-size: x-large; /* Larger font size */
+}
+
+nav a:hover {
+    color: rgb(255, 0, 0); /* Hover color */
+}
+
+/* Dark Mode Toggle Button Styles */
+.toggle-button {
+    cursor: pointer; /* Pointer cursor */
+    font-size: 1rem; /* Font size */
+    position: absolute; /* Absolute positioning */
+    right: 1rem; /* Distance from right */
+    top: 7rem; /* Distance from top */
+    line-height: 2%;
+    text-align: center;
+}
+
+.toggle-button i{
+    font-size: xx-large;
+   }
+
+/* Main Content Styles */
+main {
+    padding: 1rem; 
+    margin-top: 0vh; 
+    margin-bottom: 15vh;
+   background-color: rgb(248, 233, 212);
+}
+
+/* Section Styles */
+section {
+    margin: 1rem 0; 
+    background-color: rgb(248, 233, 212); 
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Wrap content */
+}
+
+/* Figure Styles */
+figure {
+    width: 40%; /* Width of figure */
+    background-color: rgb(248, 233, 212); 
+    border-radius: 0 0 20px 20px; 
+    padding:10px;
+    box-shadow: 5px 5px 30px 1px rgb(41, 40, 40) ;
+}
+
+figure img {
+    width: 100%; /* Full width image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Section Intro Styles */
+.section_intro {
+    flex-basis: 100%; /* Full width within flex container */
+    text-align: center; /* Center align text */
+}
+
+
+#contact a{
+text-decoration: none;
+}
+
+#contact a:hover{
+    text-decoration: underline;
+    opacity: 0.5;
+    }
+
+#contact figure{
+width:20%;
+text-align: center;
+}
+
+/* Style for the WhatsApp icon */
+.fab.fa-whatsapp {
+    color: green;
+    font-size: 2em; /* Adjust size as needed */
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+
+/* Style for the Facebook icon */
+.fab.fa-facebook {
+    color: blue;
+    font-size: 2em; /* Adjust size as needed */
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+
+/* Style for the Email icon */
+.fa.fa-envelope {
+    color: red;
+    font-size: 2em; /* Adjust size as needed */
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #355f69; 
+    color: white;
+    text-align: center; 
+    padding: 20px 0; 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+   
+}
+
+/* Dark Mode*/
+
+body.dark-mode {
+    background: #000;
+    color: #ffffff; 
+}
+
+header.dark-mode {
+    background-color: #000000;
+    color: rgb(255, 98, 0);
+}
+
+main.dark-mode {
+    background-color: #000000;
+}
+
+section.dark-mode {
+    background-color: #000000;
+    color: rgb(255, 98, 0);
+}
+
+
+figure.dark-mode {
+    background-color: #000000;
+    color: white;
+}
+
+figcaption.dark-mode {
+    background-color: red;
+}
+
+#contact.dark-mode{
+    background-color: #000;
+}
+/* Dark Mode for Figures within Contact Section */
+#contact.dark-mode figure {
+    background-color: rgb(0, 0, 0);
+    color: white; /* Adjust text color for contrast */
+}
+
+

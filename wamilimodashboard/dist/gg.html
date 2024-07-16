@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="ff.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+</head>
+<body>
+    <header>
+        <div class="logout">
+            
+            <button class="menu-btn" aria-label="Menu">&#9776;</button>
+            <h3>User Dashboard</h3>
+            <a id="logout-link" href="#">Logout</a>
+
+        </div>
+       
+    </header>
+
+ 
+        <aside>
+                <ul class="aside-menu">
+                    <li><button id="profile-btn"><i class="fas fa-user"></i> Profile</button></li>
+                    <li><button id="booking-btn"><i class="fas fa-calendar-plus"></i> Book Services</button></li>
+                    <li><button id="payments-btn"><i class="fas fa-money-bill-alt"></i> Payments</button></li>
+                </ul>
+             
+         </aside>
+
+        <main>
+        <section id="profile-section" class="dashboard-section">
+            <h2>Profile Details</h2>
+            <div id="profile-details">
+                <p><strong>Full Name:</strong> wamilimo hillary</p>
+                <p><strong>Email:</strong> wamish@example.com</p>
+                <p><strong>Phone:</strong> +1 234 5678</p>
+                <button id="edit-profile-btn">Edit Profile</button>
+            </div>
+
+            <form id="update-profile-form" class="hidden">
+                <div class="input-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <button type="submit">Update Profile</button>
+                <button type="button" id="cancel-profile-btn">Cancel</button>
+            </form>
+        </section>
+
+
+
+        <section id="booking-section" class="dashboard-section hidden">
+            <h2>Book Services</h2>
+            <form id="booking-form">
+                <div class="input-group">
+                    <label for="service-type">Service Type</label>
+                    <select id="service-type" name="service-type" required>
+                        <option value="fumigation">Fumigation</option>
+                        <option value="pest-control">Pest Control</option>
+                        <option value="cleaning">Cleaning</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="input-group">
+                    <label for="time">Preferred Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+
+        <section id="payments-section" class="dashboard-section hidden">
+            <h2>Payments</h2>
+            <div class="payment-card">
+                <h3>Payment History</h3>
+                <ul id="payment-history">
+                    <!-- Payment history items will be dynamically generated here -->
+                </ul>
+            </div>
+            <div class="payment-card">
+                <h3>Balance Due</h3>
+                <p id="balance-due">$500.00</p> <!-- Example balance due, replace with dynamic data -->
+                <button id="pay-now">Pay Now</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 wamilimo fumigations. All rights reserved.</p>
+    </footer>
+
+    <script>
+     document.addEventListener('DOMContentLoaded', function () {
+    const profileBtn = document.getElementById('profile-btn');
+    const bookingBtn = document.getElementById('booking-btn');
+    const paymentsBtn = document.getElementById('payments-btn');
+    const profileSection = document.getElementById('profile-section');
+    const bookingSection = document.getElementById('booking-section');
+    const paymentsSection = document.getElementById('payments-section');
+    const editProfileBtn = document.getElementById('edit-profile-btn');
+    const updateProfileForm = document.getElementById('update-profile-form');
+    const cancelProfileBtn = document.getElementById('cancel-profile-btn');
+    const menuBtn = document.querySelector('.menu-btn');
+    const aside = document.querySelector('aside');
+
+    // Event listeners for navigation buttons
+    profileBtn.addEventListener('click', function () {
+        showSection(profileSection);
+    });
+
+    bookingBtn.addEventListener('click', function () {
+        showSection(bookingSection);
+    });
+
+    paymentsBtn.addEventListener('click', function () {
+        showSection(paymentsSection);
+    });
+
+    // Edit profile button functionality
+    editProfileBtn.addEventListener('click', function () {
+        showForm(updateProfileForm);
+    });
+
+    // Cancel profile update button
+    cancelProfileBtn.addEventListener('click', function () {
+        hideForm(updateProfileForm);
+    });
+
+    // Menu button functionality
+    menuBtn.addEventListener('click', function () {
+        aside.classList.toggle('visible');
+    });
+
+    // Function to show section and hide others
+    function showSection(section) {
+        const sections = document.querySelectorAll('.dashboard-section');
+        sections.forEach(sec => {
+            sec.classList.add('hidden');
+        });
+        section.classList.remove('hidden');
+        aside.classList.remove('visible'); // Hide aside when a section is selected
+    }
+
+    // Function to show form and hide details
+    function showForm(form) {
+        const details = document.getElementById('profile-details');
+        details.classList.add('hidden');
+        form.classList.remove('hidden');
+    }
+
+    // Function to hide form and show details
+    function hideForm(form) {
+        const details = document.getElementById('profile-details');
+        details.classList.remove('hidden');
+        form.classList.add('hidden');
+    }
+});
+
+/* JavaScript to prompt the user for confirmation before proceeding with the logout action*/
+document.addEventListener('DOMContentLoaded', function () {
+    const logoutLink = document.getElementById('logout-link');
+
+    logoutLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default action of following the link immediately
+
+        // Prompt the user with a confirmation dialog
+        if (confirm('Are you sure you want to log out?')) {
+            // If user confirms, proceed with the logout action
+            // Replace with your logout logic, such as redirecting to a logout endpoint or clearing session/local storage
+            // Example:
+            // window.location.href = '/logout'; // Redirect to logout endpoint
+            console.log('Logging out...'); // Placeholder action
+        } else {
+            // If user cancels, do nothing (or optionally handle cancellation)
+            console.log('Logout cancelled.');
+        }
+    });
+});
+
+    </script>
+
+</body>
+</html>

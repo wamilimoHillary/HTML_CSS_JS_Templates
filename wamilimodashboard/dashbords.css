@@ -1,0 +1,312 @@
+/* General Styles */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   }
+
+header {
+    background-color: #355f69;
+    color: #fff;
+    padding: 1rem;
+    box-shadow: 5px 5px 0px 3px rgb(4, 207, 4);
+}
+
+.logout {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logout h3 {
+    margin: auto;
+    font-size: medium;
+  }
+  
+
+.logout a {
+    text-decoration: none;
+    margin: auto;
+    background-color: rgb(0, 128, 0);
+    padding: 8px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.logout a:hover {
+ background-color: red;
+ opacity: 0.8;
+}
+.menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: fit-content;
+
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    margin-bottom: 8rem;
+
+}
+
+aside {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: #355f69;
+    color: #fff;
+    padding: 1rem;
+}
+
+.aside-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.aside-menu li {
+    margin-bottom: 1rem;
+}
+
+.aside-menu button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding:0.2rem 1rem;
+    background-color: #fff;
+    border: none;
+    color: #355f69;
+    border-radius:12px;
+    cursor: pointer;
+    font-size: x-large;
+    box-shadow: 2px 2px 3px 2px #f2ecec;
+}
+
+.aside-menu button i {
+    margin-right: 0.5rem; /* Adjust spacing between icon and text */
+    margin-left: 1rem;
+    font-size:xx-large;
+
+}
+
+
+.aside-menu button:hover {
+    background-color: #ddd;
+}
+
+.dashboard-section {
+    min-width: 300px;
+    background-color: #fff;
+    position: relative;
+    left: 25%;
+    padding: 1rem;
+    margin-left: 1rem;
+    box-shadow: 5px 5px 30px 1px rgb(41, 40, 40);
+    border-radius: 10px;
+}
+
+.usert{
+    position:relative;
+    left: 35%;
+}
+
+/*HIDE ALL FORMS booking and payment*/
+.hidden {
+    display: none;
+}
+
+h2 {
+    color: rgb(0, 128, 0);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+.input-group {
+    margin-bottom: 15px;
+    margin-right: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid rgb(0, 126, 0);
+    border-radius: 25px;
+}
+
+button {
+    width: 40%;
+    padding: 7px;
+    background-color: rgb(0, 128, 0);
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 1px 2px 5px 2px wheat;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.payment-card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-card h3 {
+    color: rgb(0, 128, 0);
+    margin-bottom: 0.5rem;
+}
+
+.payment-card p {
+    font-weight: bold;
+}
+
+#payment-history {
+    list-style: none;
+    padding: 0;
+}
+
+footer {
+    background-color: #355f69;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/*admin dashboard styles*/
+
+.aside_links {
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    padding: 2rem;
+}
+
+.aside_links a {
+   text-decoration: none;
+   margin-bottom: 1.5rem;
+   font-size: larger;
+   background:#fff ;
+   color: #1186a0;
+   padding:3px 15px;
+   border-radius: 8px;
+   box-shadow: 1px 1px 5px 0px  #fff;
+}
+
+.aside_links a:hover {
+   transform: translateX(10px);
+   opacity: 0.7;
+   background:#355f69 ;
+ }
+
+ .aside_links a:nth-child(even):hover {
+    background: rgb(0, 128, 0);
+    transform: translateY(10px);
+  }
+
+.cards_container{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+   position: relative;
+    left: 22%;
+    justify-content: space-around;
+  }
+
+  .cards:nth-child(even){
+    background:#355f69;
+  }
+
+.cards{
+    width: 200px;
+    height: 110px;
+    background:rgb(0, 118, 0);
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow:2px 2px 15px 2px #355f69;
+    text-align: center;
+   }
+
+   .cards h1, h3 {
+    font-size: xx-large;
+    color: #fff;
+   }
+
+   .cards h3 {
+    font-size:large;
+    color: #fff;
+   }
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  
+    .menu-btn {
+        display: block;
+        position: relative;
+        left:10px;
+            
+    }
+
+    .usert{
+        position:absolute;
+        left:10%;
+        margin: auto;
+        top: 40%;
+    }
+    
+   
+    aside {
+        width: 94%;
+        position: fixed;
+        top: 4.8rem;
+        left: -100%;
+        height: calc(100% - 64px);
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+    }
+
+    aside.visible {
+        left: 0;
+    }
+
+
+    .dashboard-section {
+        position: relative;
+        left:0;
+        min-width: fit-content;
+        width: calc(100% - 1rem);
+    }
+
+    .cards_container{
+             left:5px;
+             margin: auto;
+  }
+
+    footer {
+        position:fixed;
+        bottom: 0;
+        font-size: small;
+    }
+}

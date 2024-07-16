@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+    <style>
+    /* Style the body to center content and set background color */
+    body {
+        text-align: center;
+        background-color: wheat;
+        height: 100vh;
+        display: flex; /*must be to center content in any way */
+        justify-content: center; /* center content horizontally */
+        place-items: center; /*center content vertically*/
+         margin: 2rem;  
+       flex-wrap: wrap;
+       line-height: normal;
+    }
+
+    
+    /* Style for the container div */
+    .container {
+        width:60%;
+        height: fit-content;
+        position: relative;
+        border: 1px solid  rgb(255, 115, 0); 
+         border-radius: 20px;         
+    }
+
+    p {
+        font-size: xx-large;
+    }
+
+    /* Style for the image */
+    img {
+        width: 100%; /* Make image take up full width of container */
+        height:auto;
+        
+    }
+
+    /* Style for the font awesome icons */
+    i {
+        position: absolute;
+        top: 50%; /* Vertically center the icon */
+        cursor: pointer; /* Change cursor to pointer on hover */
+        color: #fff;        font-size: 60px;
+        font-weight: bold;
+        -webkit-text-stroke: 1px rgb(255, 115, 0);
+    }
+
+    i:hover{
+        color: rgb(255, 115, 0);
+    }
+
+    .back{
+        left:-15px; /* Position the left arrow icon */       
+    }
+
+    .next {
+        right:-15px; /* Position the right arrow icon */
+    }
+
+    .heading h1{
+        flex: 100%;
+        -webkit-text-stroke: 1px rgb(255, 115, 0);
+        font-size: 50px;
+        color: #640707;
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 768px) {
+        .container{
+            width: 100%;
+        }
+        .heading h1{
+        font-size: small;
+        -webkit-text-stroke: 0px transparent;
+    }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="heading">
+    <h1>WAMILIMO HILLARIE SIMPLE SLIDE</h1>
+</div>
+    <!-- Container for image and arrow icons -->
+    <div class="container">
+        <p>Luyha weekly food diet</p>
+        <i class="back" onclick="prevImage()">«</i>
+        <i class="next" onclick="nextImage()">»</i>
+        <!-- Image element to display images, initially set to k6.jpg -->
+        <img src="images/k6.jpg" alt="no images" id="image">
+    </div>
+
+    <script>
+        // Array containing the paths to the images
+        const images = ["images/k1.jpg", "images/k2.jpg", "images/k3.jpg","images/k4.jpg " , "images/k5.jpg ", "images/k6.jpg","images/k7.jpg","images/k8.jpg"]; // Add more image paths as needed
+        // Variable to keep track of the current image index
+        let currentIndex = 0;
+
+        // Function to update the image source to the next image in the array
+        function nextImage() {
+            const imgElement = document.getElementById('image'); // Get the image element by its ID
+            currentIndex = (currentIndex + 1) % images.length; // Increment index and wrap around using modulus
+            imgElement.src = images[currentIndex]; // Set the src attribute of the image element to the new image path
+        }
+
+        // Function to update the image source to the previous image in the array
+        function prevImage() {
+            const imgElement = document.getElementById('image'); // Get the image element by its ID
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // Decrement index and wrap around using modulus
+            imgElement.src = images[currentIndex]; // Set the src attribute of the image element to the new image path
+        }
+    </script>
+</body>
+</html>

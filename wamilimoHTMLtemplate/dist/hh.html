@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fumigation Services</title>
+    <link rel="stylesheet" href="styl.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Fumigation Services</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+
+            <div class="service">
+                <h3>Residential Fumigation</h3>
+                <p>Description: Effective fumigation services for homes.</p>
+                <p>Price: $100</p>
+                <button onclick="bookService(1)">Book Now</button>
+            </div>
+
+            <div class="service">
+                <h3>Commercial Fumigation</h3>
+                <p>Description: Comprehensive fumigation solutions for businesses.</p>
+                <p>Price: $200</p>
+                <button onclick="bookService(2)">Book Now</button>
+            </div>
+
+            <!-- Add more service listings as needed -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fumigation Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Placeholder function for booking a service (to be implemented in JavaScript)
+        function bookService(serviceId) {
+            // Implement booking functionality (e.g., redirect to booking page)
+            console.log('Booking service with ID:', serviceId);
+            // Example: window.location.href = '/book-service?id=' + serviceId;
+        }
+    </script>
+</body>
+</html>

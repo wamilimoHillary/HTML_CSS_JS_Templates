@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+   <link rel="stylesheet" href="dashbords.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+</head>
+<body>
+    <header>
+        <div class="logout">
+
+            <button class="menu-btn" aria-label="Menu">&#9776;</button>
+            <h3>Admin Dashboard</h3>
+            <a id="logout-link" href="#">Logout</a>
+            <script defer>
+            /* JavaScript to prompt the user for confirmation before proceeding with the logout action*/
+document.addEventListener('DOMContentLoaded', function () {
+    const logoutLink = document.getElementById('logout-link');
+
+    logoutLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default action of following the link immediately
+
+        // Prompt the user with a confirmation dialog
+        if (confirm('Are you sure you want to log out?')) {
+            // If user confirms, proceed with the logout action
+            // Replace with your logout logic, such as redirecting to a logout endpoint or clearing session/local storage
+            // Example:
+            // window.location.href = '/logout'; // Redirect to logout endpoint
+            console.log('Logging out...'); // Placeholder action
+        } else {
+            // If user cancels, do nothing (or optionally handle cancellation)
+            console.log('Logout cancelled.');
+        }
+    });
+});
+     </script>
+        </div>
+
+    </header>
+
+    <aside>
+        
+            <nav class="aside_links">
+                    <a href="#"><i class="fas fa-calendar-plus"></i>Dashboard</a></li>
+                    <a href="#"><i class="fas fa-user"></i>Users</a></li>
+                    <a href="#"><i class="fas fa-folder"></i>Services</a></li>
+                    <a href="#"><i class="fas fa-money-bill-alt"></i> Transactions</a></li>
+                    <a href="#"> <i class="fas fa-cog"></i> Settings</a></li>
+            </nav>
+
+    </aside>
+
+    <main>
+        <section class="cards_container">
+          <div class="cards"> <h3>Registered Users</h3> <h1>55</h1></div>
+          <div class="cards"><h3>Total Apointments</h3> <h1>5</h1></div>
+          <div class="cards"><h3>Hillary</h3> <h1>35</h1></div> 
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Fumigation Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

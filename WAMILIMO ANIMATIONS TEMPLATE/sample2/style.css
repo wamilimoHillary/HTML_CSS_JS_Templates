@@ -1,0 +1,28 @@
+
+body{
+    margin: 20%;
+}
+
+/*animation for my title name*/
+.water-effect{
+    width: 1200px;   
+}
+
+.water-effect h1{
+    line-height: 65px;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(61, 3, 3) ;
+    background-image: url(images/hy.jpg);
+    -webkit-background-clip: text;
+    background-position:70% 100%;
+    animation: myheading  3s alternate infinite;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:7em;
+  }
+
+@keyframes myheading{
+    100%{
+    background-position:1000px 0 ;
+}
+   }

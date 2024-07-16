@@ -1,0 +1,63 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    width: 400px;
+    height: 400px;
+    perspective: 1000px;
+  }
+  
+  .box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: flipBounce 5s infinite;
+    transform-origin: center bottom;
+  }
+  
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+  }
+  
+  .front  { background: #3498db; transform: translateZ(200px); }
+  .back   { background: #e74c3c; transform: rotateY(180deg) translateZ(200px); }
+  .left   { background: #2ecc71; transform: rotateY(-90deg) translateZ(200px); }
+  .right  { background: #f1c40f; transform: rotateY(90deg) translateZ(200px); }
+  .top    { background: #9b59b6; transform: rotateX(90deg) translateZ(200px); }
+  .bottom { background: #e67e22; transform: rotateX(-90deg) translateZ(200px); }
+  
+  @keyframes flipBounce {
+    0%, 100% {
+      transform: rotateX(0deg) rotateY(0deg) translateY(0);
+    }
+    25% {
+      transform: rotateX(90deg) rotateY(0deg) translateY(-50px);
+    }
+    50% {
+      transform: rotateX(90deg) rotateY(180deg) translateY(0);
+    }
+    75% {
+      transform: rotateX(0deg) rotateY(180deg) translateY(50px);
+    }
+    90% {
+      transform: rotateX(0deg) rotateY(180deg) translateY(0);
+    }
+  }
+  
